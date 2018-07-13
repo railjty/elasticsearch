@@ -35,8 +35,8 @@ RUN set -ex \
 RUN wget https://github.com/eiblog/eiblog/archive/master.zip \
     && unzip master.zip \
     && cd eiblog-master/conf/es \
-    && cp -r ./config /usr/share/elasticsearch/config \
-    && cp -r ./plugins /usr/share/elasticsearch/plugins
+    && cp -r ./config /usr/share/elasticsearch/ \
+    && cp -r ./plugins /usr/share/elasticsearch/
 
 
 VOLUME /usr/share/elasticsearch/data
