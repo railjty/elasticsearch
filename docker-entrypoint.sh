@@ -25,4 +25,4 @@ fi
 # As argument is not related to elasticsearch,
 # then assume that user wants to run his own process,
 # for example a `bash` shell to explore this image
-exec /usr/share/elasticsearch/bin/elasticsearch --E http.port=$PORT
+/usr/share/elasticsearch/bin/elasticsearch --E http.port=$PORT
