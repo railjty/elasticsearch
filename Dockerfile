@@ -11,16 +11,8 @@ RUN set -x \
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
 # https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
 
-ENV ELASTICSEARCH_VERSION 2.4.1
-ENV ELASTICSEARCH_DEB_VERSION 2.4.1
 
-RUN set -x \
-	\
-# don't allow the package to install its sysctl file (causes the install to fail)
-# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
-	&& dpkg-divert --rename /usr/lib/sysctl.d/elasticsearch.conf \
-	\
-	&& apt-get update \
+RUN apt-get update \
 	&& apt-get install -y --no-install-recommends wget curl \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.1/elasticsearch-2.4.1.deb \
