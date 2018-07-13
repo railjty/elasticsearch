@@ -32,7 +32,7 @@ RUN set -ex \
 		mkdir -p "$path"; \
 		chown -R elasticsearch:elasticsearch "$path"; \
 	done
-RUN wget https://github.com/eiblog/eiblog/archive/master.zip \
+RUN wget https://github.com/HamJin/eiblog/archive/master.zip \
     && unzip master.zip \
     && cd eiblog-master/conf/es \
     && cp -r ./config /usr/share/elasticsearch/ \
@@ -45,4 +45,4 @@ COPY docker-entrypoint.sh /
 
 EXPOSE 9200
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["elasticsearch"] -E http.port=$PORT
+CMD ["elasticsearch"]
