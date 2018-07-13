@@ -32,7 +32,7 @@ RUN set -ex \
 		mkdir -p "$path"; \
 		chown -R elasticsearch:elasticsearch "$path"; \
 	done
-RUN wget https://github.com/HamJin/eiblog/archive/master.zip \
+RUN wget https://github.com/eiblog/eiblog/archive/master.zip \
     && unzip master.zip \
     && cd eiblog-master/conf/es \
     && cp -r ./config /usr/share/elasticsearch/ \
