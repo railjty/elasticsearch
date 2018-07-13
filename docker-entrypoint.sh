@@ -21,9 +21,8 @@ if [ "$1" = 'elasticsearch' -a "$(id -u)" = '0' ]; then
 	set -- gosu elasticsearch "$@"
 	#exec gosu elasticsearch "$BASH_SOURCE" "$@"
 fi
-echo -e -n http.publish_port >> /usr/share/elasticsearch/config/elasticsearch.yml
-echo -e -n $PORT >> /usr/share/elasticsearch/config/elasticsearch.yml
+
 # As argument is not related to elasticsearch,
 # then assume that user wants to run his own process,
 # for example a `bash` shell to explore this image
-exec "$@"
+exec /usr/share/elasticsearch/bin/elasticsearch --E http.port=$PORT
