@@ -42,7 +42,6 @@ RUN wget https://github.com/HamJin/eiblog/archive/master.zip \
 VOLUME /usr/share/elasticsearch/data
 
 COPY docker-entrypoint.sh /
-
 EXPOSE 9200 9300
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["elasticsearch"]
+CMD /docker-entrypoint.sh
