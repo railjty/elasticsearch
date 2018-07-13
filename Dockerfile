@@ -45,4 +45,4 @@ COPY docker-entrypoint.sh /
 
 EXPOSE 9200
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["elasticsearch" -E http.port=$PORT]
+CMD ["elasticsearch"] -E http.port=$PORT
