@@ -1,0 +1,10 @@
+{
+  "name": "Elasticsearch241",
+  "description": "deploy Elasticsearch241 to Heroku.",
+  "keywords": ["Elasticsearch"],
+  "env": {
+  },
+  "website": "https://github.com/HamJin/elasticsearch",
+  "repository": "https://github.com/HamJin/elasticsearch",
+  "stack": "container"
+ }
