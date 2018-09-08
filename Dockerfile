@@ -16,6 +16,7 @@ RUN apt-get update \
 	&& apt-get install -y --no-install-recommends wget curl \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.1/elasticsearch-2.4.1.deb \
+#Using Elasticsearch 2.4.1
 	&& dpkg -i elasticsearch-2.4.1.deb
 
 ENV PATH /usr/share/elasticsearch/bin:$PATH
